@@ -1,0 +1,97 @@
+# Input string
+
+   Content of input string:
+     Empty. 		[error]
+     Invalid operators.   [error]
+     Valid.
+
+   
+# File
+
+   Presence of fileName:
+     Yes.                     
+     No.			[error][property noFileName]   
+   fileName match:
+     Yes.		[if !noFileName]
+     No.			[error]
+   file content:
+     Empty. 		[single]
+     One line.		[single]
+     Multiple lines.
+		
+	
+# -f
+
+  Presence of -f:
+    Yes.                    [single]    
+    No.
+
+
+# -r
+
+  Presence of -r:
+    Yes.                   [property replace] 
+    No.
+  Old string:
+    Empty.		 [error]
+    No found in the file.  [single]
+    Any value.
+  New string:
+    Empty.		 [single]
+    Same as the old string. [single]
+    Any value.
+
+
+# -g
+
+   Presence of -g:
+     Yes with r.  	[if replace]
+     Yes without r.       [if !replace][error]                
+     No.  		[single]
+
+
+# -a
+
+   Presence of -a:
+     Yes.                        
+     No.
+
+
+# -p
+
+   Presence of -p:
+     Yes.                        
+     No.
+   String of -p:
+     Empty.		[error]
+     Not empty.
+
+
+# -d
+
+   Presence of -d:
+     Yes.                 [property d]    
+     No.
+
+   Value of d:
+     1-10 int.   	[if d]
+     <1.         	[error]
+     >10.		[error]
+     Not integer.         [error]
+
+# -n
+
+   Presence of -n:
+     Yes.                 [property n]  
+     No.			 
+
+   Value of n:
+     1-5 int.		[if n]
+     <1.         	[error][if n]
+     >5.		  	[error][if n]
+     Not integer.         [error][if n]
+
+
+
+
+
